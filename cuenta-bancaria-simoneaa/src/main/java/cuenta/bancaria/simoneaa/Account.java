@@ -17,5 +17,12 @@ public class Account {
         this.monthlyFee = 0;
 
     }
+
+    public void deposit(float amount) {
+
+        this.balance += amount;
+        this.numberOfDeposits++;
+
+    }
     
 }
