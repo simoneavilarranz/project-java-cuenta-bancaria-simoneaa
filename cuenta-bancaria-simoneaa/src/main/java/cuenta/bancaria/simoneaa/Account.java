@@ -40,5 +40,12 @@ public class Account {
         this.balance += monthlyInterest;
 
     }
+
+    public void monthlyStatement() {
+
+        this.balance -= monthlyFee;
+        calculateMonthlyInterest();
+
+    }
     
 }
