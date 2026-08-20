@@ -33,5 +33,12 @@ public class Account {
         }
 
     }
+
+    public void calculateMonthlyInterest() {
+
+        float monthlyInterest = balance * annualRate / 12 / 100;
+        this.balance += monthlyInterest;
+
+    }
     
 }
