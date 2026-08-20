@@ -24,5 +24,14 @@ public class Account {
         this.numberOfDeposits++;
 
     }
+
+    public void withdraw(float amount) {
+
+        if (balance >= amount) {
+            this.balance -= amount;
+            this.numberOfWithdrawals++;   
+        }
+
+    }
     
 }
