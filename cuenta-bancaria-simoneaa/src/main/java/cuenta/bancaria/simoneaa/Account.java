@@ -47,5 +47,13 @@ public class Account {
         calculateMonthlyInterest();
 
     }
+
+    public String print() {
+
+        String values = "Balance: " + balance + " Number of deposits: " + numberOfDeposits + 
+            " Number of withdrawals: " + numberOfWithdrawals + " Annual rate: " + annualRate + " Monthly fee: " + monthlyFee;
+        return values;
+
+    }
     
 }
