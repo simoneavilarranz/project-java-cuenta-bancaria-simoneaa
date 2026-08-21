@@ -37,3 +37,57 @@ Si el saldo es menor a 10.000, la cuenta está inactiva. Se redefinen los métod
 
 ---
 
+## Diagramas UML de Clase
+
+```mermaid
+classDiagram
+    class Account {
+        #float balance
+        #int numberOfDeposits
+        #int numberOfWithdrawals
+        #float annualRate
+        #float monthlyFee
+        +Account(float balance, float annualRate)
+        +deposit(float amount) void
+        +withdraw(float amount) void
+        +calculateMonthlyInterest() void
+        +monthlyStatement() void
+        +print() String
+        +getBalance() float
+        +getNumberOfDeposits() int
+        +getNumberOfWithdrawals() int
+        +getAnnualRate() float
+        +getMonthlyFee() float
+        +setMonthlyFee(float monthlyFee) void
+    }
+
+    class CheckingAccount {
+        -float overdraft
+        +CheckingAccount(float balance, float annualRate)
+        +withdraw(float amount) void
+        +deposit(float amount) void
+        +monthlyStatement() void
+        +print() String
+        +getOverdraft() float
+        +setOverdraft(float overdraft) void
+    }
+
+    class SavingsAccount {
+        -boolean active
+        +SavingsAccount(float balance, float annualRate)
+        +deposit(float amount) void
+        +withdraw(float amount) void
+        +monthlyStatement() void
+        +print() String
+        +isActive() boolean
+    }
+
+    Account <|-- CheckingAccount
+    Account <|-- SavingsAccount
+```
+
+---
+
+## Testing
+
+<img src="cuenta-bancaria-simoneaa/src/assets/test.jpg">
