@@ -12,7 +12,7 @@ public class SavingsAccount extends Account {
             active = true;
         } else active = false;
 
-    }
+    }    
 
     @Override
     public void deposit(float amount) {
@@ -40,8 +40,12 @@ public class SavingsAccount extends Account {
 
     @Override
     public String print() {
-        String values = "Balance: " + balance + " Number of transactions: " + numberOfDeposits+numberOfWithdrawals + " Monthly fee: " + monthlyFee;
+        String values = "Balance: " + balance + " Number of transactions: " + (numberOfDeposits + numberOfWithdrawals) + " Monthly fee: " + monthlyFee;
         return values;
+    }
+
+    public boolean isActive() {
+        return active;
     }
     
 }

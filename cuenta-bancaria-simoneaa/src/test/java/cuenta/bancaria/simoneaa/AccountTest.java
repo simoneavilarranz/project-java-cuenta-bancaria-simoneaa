@@ -18,7 +18,7 @@ public class AccountTest {
     @Test
     public void newWithdrawal() {
         Account account = new Account(100, 0);
-        account.withdraw(100);;
+        account.withdraw(100);
         assertThat(account.getBalance(), is(0F));
         assertThat(account.getNumberOfWithdrawals(), is(1));
     }
@@ -26,7 +26,7 @@ public class AccountTest {
     @Test
     public void newFailedWithdrawal() {
         Account account = new Account(0, 0);
-        account.withdraw(100);;
+        account.withdraw(100);
         assertThat(account.getBalance(), is(0F));
         assertThat(account.getNumberOfWithdrawals(), is(0));
     }
