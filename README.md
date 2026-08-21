@@ -91,3 +91,9 @@ classDiagram
 ## Testing
 
 <img src="cuenta-bancaria-simoneaa/src/assets/test.jpg">
+
+---
+
+## Autora
+
+Simone Ávila Arranz - Factoría F5 Bootcamp P5
