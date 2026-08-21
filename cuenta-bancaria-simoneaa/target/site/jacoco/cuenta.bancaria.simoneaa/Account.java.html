@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Account.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">cuenta-bancaria-simoneaa</a> &gt; <a href="index.source.html" class="el_package">cuenta.bancaria.simoneaa</a> &gt; <span class="el_source">Account.java</span></div><h1>Account.java</h1><pre class="source lang-java linenums">package cuenta.bancaria.simoneaa;
+
+public class Account {
+
+    protected float balance;
+    protected int numberOfDeposits;
+    protected int numberOfWithdrawals;
+    protected float annualRate;
+    protected float monthlyFee;
+
+<span class="fc" id="L11">    public Account(float balance, float annualRate) {</span>
+
+<span class="fc" id="L13">        this.balance = balance;</span>
+<span class="fc" id="L14">        this.annualRate = annualRate;</span>
+<span class="fc" id="L15">        this.numberOfDeposits = 0;</span>
+<span class="fc" id="L16">        this.numberOfWithdrawals = 0;</span>
+<span class="fc" id="L17">        this.monthlyFee = 0;</span>
+
+<span class="fc" id="L19">    }</span>
+
+    public void deposit(float amount) {
+
+<span class="fc" id="L23">        this.balance += amount;</span>
+<span class="fc" id="L24">        this.numberOfDeposits++;</span>
+
+<span class="fc" id="L26">    }</span>
+
+    public void withdraw(float amount) {
+
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (balance &gt;= amount) {</span>
+<span class="fc" id="L31">            this.balance -= amount;</span>
+<span class="fc" id="L32">            this.numberOfWithdrawals++;   </span>
+        }
+
+<span class="fc" id="L35">    }</span>
+
+    public void calculateMonthlyInterest() {
+
+<span class="fc" id="L39">        float monthlyInterest = balance * annualRate / 12 / 100;</span>
+<span class="fc" id="L40">        this.balance += monthlyInterest;</span>
+
+<span class="fc" id="L42">    }</span>
+
+    public void monthlyStatement() {
+
+<span class="fc" id="L46">        this.balance -= monthlyFee;</span>
+<span class="fc" id="L47">        calculateMonthlyInterest();</span>
+
+<span class="fc" id="L49">    }</span>
+
+    public String print() {
+
+<span class="fc" id="L53">        String values = &quot;Balance: &quot; + balance + &quot; Number of deposits: &quot; + numberOfDeposits + </span>
+<span class="fc" id="L54">            &quot; Number of withdrawals: &quot; + numberOfWithdrawals + &quot; Annual rate: &quot; + annualRate + &quot; Monthly fee: &quot; + monthlyFee;</span>
+<span class="fc" id="L55">        return values;</span>
+
+    }
+
+    public float getBalance() {
+<span class="fc" id="L60">        return balance;</span>
+    }
+
+    public int getNumberOfDeposits() {
+<span class="fc" id="L64">        return numberOfDeposits;</span>
+    }
+
+    public int getNumberOfWithdrawals() {
+<span class="fc" id="L68">        return numberOfWithdrawals;</span>
+    }
+
+    public float getAnnualRate() {
+<span class="nc" id="L72">        return annualRate;</span>
+    }
+
+    public float getMonthlyFee() {
+<span class="nc" id="L76">        return monthlyFee;</span>
+    }
+
+    public void setMonthlyFee(float monthlyFee) {
+<span class="fc" id="L80">        this.monthlyFee = monthlyFee;</span>
+<span class="fc" id="L81">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

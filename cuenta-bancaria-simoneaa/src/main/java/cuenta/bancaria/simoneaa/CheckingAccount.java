@@ -25,8 +25,8 @@ public class CheckingAccount extends Account {
         if (overdraft == 0) {
             super.deposit(amount);
         }   else if (amount > overdraft) {
-            this.overdraft = 0;
             amount = amount - overdraft;
+            this.overdraft = 0;
             super.deposit(amount);
         }   else if (amount <= overdraft) {
             overdraft = overdraft - amount;
@@ -41,9 +41,17 @@ public class CheckingAccount extends Account {
 
     @Override
     public String print() {
-        String values = "Balance: " + balance + " Number of transactions: " + numberOfDeposits+numberOfWithdrawals + 
+        String values = "Balance: " + balance + " Number of transactions: " + (numberOfDeposits + numberOfWithdrawals) + 
         " Monthly fee: " + monthlyFee + " Overdraft: " + overdraft;
         return values;
+    }
+
+    public float getOverdraft() {
+        return overdraft;
+    }
+
+    public void setOverdraft(float overdraft) {
+        this.overdraft = overdraft;
     }
 
 }

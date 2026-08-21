@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+cuenta-bancaria-simoneaa,cuenta.bancaria.simoneaa,Account,6,103,0,2,2,28,2,11,2,10
+cuenta-bancaria-simoneaa,cuenta.bancaria.simoneaa,App,4,0,0,0,2,0,1,0,1,0
+cuenta-bancaria-simoneaa,cuenta.bancaria.simoneaa,CheckingAccount,27,69,4,4,6,19,6,5,3,4
+cuenta-bancaria-simoneaa,cuenta.bancaria.simoneaa,SavingsAccount,4,73,2,8,1,20,2,9,0,6
